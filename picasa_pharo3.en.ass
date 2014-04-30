@@ -25,7 +25,13 @@ Dialogue: 0,0:00:22.39,0:00:23.39,Default,,0000,0000,0000,,I increase the font s
 Dialogue: 0,0:00:23.39,0:00:24.89,Default,,0000,0000,0000,,through the Settings Browser.
 Dialogue: 0,0:00:32.48,0:00:33.98,Default,,0000,0000,0000,,Picasa provides a RESTful API
 Dialogue: 0,0:00:34.08,0:00:35.08,Default,,0000,0000,0000,,through which we can search for photos
-Dialogue: 0,0:00:35.08,0:00:36.03,Default,,0000,0000,0000,,and get the result as a XML document.
+Dialogue: 0,0:00:35.08,0:00:36.08,Default,,0000,0000,0000,,and get the result as a XML document.
 Dialogue: 0,0:00:36.08,0:00:38.68,Default,,0000,0000,0000,,Just copy the provided URL
 Dialogue: 0,0:00:38.68,0:00:40.68,Default,,0000,0000,0000,,and paste it into a Pharo workspace.
 Dialogue: 0,0:00:41.28,0:00:43.67,Default,,0000,0000,0000,,A workspace is used to dynamically evaluate some Smalltalk code.
+Dialogue: 0,0:00:43.77,0:00:47.27,Default,,0000,0000,0000,,Let's search for five photos of lighthouses.
+Dialogue: 0,0:00:50.55,0:00:52.05,Default,,0000,0000,0000,,ZnClient allows to build, execute and process HTTP requests
+Dialogue: 0,0:00:52.86,0:00:54.25,Default,,0000,0000,0000,,The XML feed is successfully retrieved
+Dialogue: 0,0:00:54.25,0:00:56.75,Default,,0000,0000,0000,,but it's not easy to examine it as a raw string.
+Dialogue: 0,0:00:56.25,0:00:58.75,Default,,0000,0000,0000,,Pharo doesn't come with a XML parser,
+Dialogue: 0,0:00:58.25,0:01:01.81,Default,,0000,0000,0000,,but we can install one easily thanks to the Configuration Browser.
