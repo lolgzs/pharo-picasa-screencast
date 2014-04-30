@@ -170,3 +170,73 @@ we can retrieve all children nodes
 00:02:04,845 --> 00:02:06,845
 that are named <i>entry</i>.
 
+44
+00:02:23,893 --> 00:02:26,893
+<i><b>self</b></i> is bound to the object
+
+45
+00:02:26,993 --> 00:02:28,993
+that is selected in the explorer.
+
+46
+00:02:29,093 --> 00:02:33,093
+Here <b>self</b> is the objet that holds the <i>title</i> element.
+
+47
+00:02:36,552 --> 00:02:40,452
+Now it's the <i>entry</i> element.
+
+48
+00:02:46,351 --> 00:02:50,251
+And now the root node of the XML document.
+
+49
+00:02:52,546 --> 00:02:56,546
+Here we get the content of all <i>title</i> tags in an array !
+
+50
+00:03:03,170 --> 00:03:07,070
+Let's something similar to get all the photos URLs.
+
+51
+00:03:26,480 --> 00:03:30,480
+I want to store title and URL for each photo in a PicasaPhoto object
+
+52
+00:03:30,580 --> 00:03:34,480
+using <i>title:</i> and <i>url:</i> messages.
+
+53
+00:03:45,580 --> 00:03:50,480
+PicasaPhoto doesn't exist yet.
+
+54
+00:03:50,580 --> 00:03:55,480
+But remember Pharo is a live environment
+
+55
+00:03:55,580 --> 00:03:59,480
+and can create it on the fly !
+
+56
+00:04:04,503 --> 00:04:08,403
+<i>PicasaPhoto</i> will be stored in a new category named <i>Picasa</i>.
+
+57
+00:04:08,503 --> 00:04:12,403
+Done ! But now Pharo opens a debugger 
+because <i>title:</i> method doesn't exist.
+
+58
+00:04:12,503 --> 00:04:16,403
+Again, Pharo can create it for us !
+
+59
+00:04:16,503 --> 00:04:20,403
+Methods are grouped into protocols for easier method browsing
+
+60
+00:04:21,426 --> 00:04:25,426
+Your name will be used to track authors of changes 
+like in a version control system.
+
