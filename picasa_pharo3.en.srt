@@ -402,3 +402,114 @@ a column.
 00:09:39,453 --> 00:09:43,453
 See how Pharo proposes a default implementation.
 
+95
+00:09:47,322 --> 00:09:50,322
+Done.
+
+96
+00:09:52,599 --> 00:09:56,599
+The last part of this tutorial
+shows how to create and serve a webpage
+
+97
+00:09:56,699 --> 00:10:00,699
+that will display the result of
+a Picasa search
+
+98
+00:10:00,799 --> 00:10:04,799
+using Zinc HTTP components.
+
+99
+00:10:15,874 --> 00:10:19,874
+We can create a web application
+
+100
+00:10:19,974 --> 00:10:24,974
+by implementing the <i>value: </i>method
+in a class
+
+101
+00:10:50,904 --> 00:10:54,904
+and map a subpath to an instance 
+of this class
+
+102
+00:10:55,004 --> 00:10:59,004
+using <i>ZnDefaultServerDelegate>>map:to:</i>
+
+103
+00:11:19,366 --> 00:11:23,366
+The <i>aRequest</i> argument is 
+a <i>ZnRequest</i> object
+
+104
+00:11:23,404 --> 00:11:27,404
+and <i>uri</i> message answers a <i>ZnUrl</i> object
+
+105
+00:11:27,404 --> 00:11:31,404
+from which we can parse the query string.
+
+106
+00:11:31,504 --> 00:11:35,504
+I retrieve the <i>s</i> parameter of an url like
+http://localhost:8080/picasa?s=lighthouse
+
+107
+00:11:51,711 --> 00:11:55,711
+Now let's build a method that will
+compose the HTML response
+
+108
+00:11:55,811 --> 00:11:59,811
+in the <i>Debugger driven development </i>way.
+
+109
+00:12:01,925 --> 00:12:05,925
+By default <i>ZnServer</i> deactivates the debugger
+for production use.
+
+110
+00:12:06,025 --> 00:12:10,025
+We can activate it through the <i>debugMode:</i> message.
+
+111
+00:12:10,125 --> 00:12:14,125
+Then we can start implementing missing methods
+the same way we've done before !
+
+112
+00:12:38,831 --> 00:12:42,831
+<i>String>>streamContents:</i> is use to build
+a string through a <i>TextStream</i> object
+
+113
+00:12:43,325 --> 00:12:48,325
+that will offer better performances than 
+concatenating several strings into one.
+
+114
+00:12:55,288 --> 00:13:00,288
+Each photo and title will be displayed
+through <ul> and <li> html tags.
+
+115
+00:13:48,368 --> 00:13:52,368
+Note the web browser is still waiting for
+the response
+
+116
+00:13:52,468 --> 00:13:56,468
+while implementing the method in the
+debugger
+
+117
+00:13:56,568 --> 00:14:00,568
+so no need to refresh the page after clicking
+on <i>Proceed</i> !
+
+118
+00:14:09,779 --> 00:14:14,779
+Enjoy <b>Pharo</b> !
+
