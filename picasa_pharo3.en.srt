@@ -233,10 +233,172 @@ Again, Pharo can create it for us !
 
 59
 00:04:16,503 --> 00:04:20,403
-Methods are grouped into protocols for easier method browsing
+Methods are grouped into protocols 
+for easier method browsing
 
 60
 00:04:21,426 --> 00:04:25,426
 Your name will be used to track authors of changes 
 like in a version control system.
+
+61
+00:04:25,526 --> 00:04:29,526
+Implement the method directly in debugger 
+without stopping the evaluation !
+
+62
+00:04:29,626 --> 00:04:33,626
+Pharo also automatically detect missing variables 
+and add them when you choose to
+
+63
+00:04:33,726 --> 00:04:37,726
+PicasaPhoto>>title: is here, 
+you can browse it !
+
+64
+00:04:56,732 --> 00:05:00,732
+Done. We call that:
+<i><b>Debugger driven development</b></i>
+
+65
+00:05:00,832 --> 00:05:04,832
+Just inspect, manipulate objects and
+let Pharo help you going faster
+
+66
+00:05:06,209 --> 00:05:11,209
+Now let's move this code into
+a new <i>Picasa</i> class
+
+67
+00:05:11,309 --> 00:05:16,309
+with a <b>class-side</b> method named
+<i>searchFor:</i>
+
+68
+00:05:51,852 --> 00:05:55,852
+The <i><b>,</b></i> (comma) message is used to
+concatenate two collections
+
+69
+00:05:55,509 --> 00:05:59,509
+and remember <i>String</i> objects are 
+collections of <i>Character</i> objects
+
+70
+00:06:10,895 --> 00:06:14,895
+I would like to delegate the implementation 
+of <i>searchFor:</i> to instance side.
+
+71
+00:06:14,995 --> 00:06:18,995
+Pharo comes with powerful refactoring tools
+that help me do that
+
+72
+00:06:37,766 --> 00:06:41,766
+<i>Format</i> menu entry is used to rearrange
+code automatically to follow the conventions
+
+73
+00:06:45,144 --> 00:06:49,144
+Let's extract this code into a new method
+
+74
+00:06:49,244 --> 00:06:53,244
+using <i>Extract method</i> refactoring
+
+75
+00:07:04,751 --> 00:07:08,751
+And inline the <i>content</i> variable in 
+order to remove it.
+
+76
+00:07:08,851 --> 00:07:10,851
+The Picasa basic search is working.
+
+77
+00:07:18,465 --> 00:07:21,465
+Now let's display the photos
+in a <i>Morphic</i> window.
+
+78
+00:07:21,051 --> 00:07:24,051
+<i>Morphic</i> is the graphic system
+used in Pharo.
+
+79
+00:07:24,151 --> 00:07:27,151
+On top of <i>Morphic</i>, <i>UITheme</i> and 
+<i>Polymorph</i> builders allows to
+
+80
+00:07:27,251 --> 00:07:30,251
+easily build graphical applications.
+
+81
+00:07:30,351 --> 00:07:35,251
+<i>TEasilyThemed>>newRow:</i> and <i>newColumn:</i>
+arrange morphs horizontally and vertically.
+
+82
+00:08:00,123 --> 00:08:04,123
+<i>PicasaPhoto>>imageMorph</i> will have to 
+download the photo from Picasa.
+
+83
+00:08:04,223 --> 00:08:09,223
+Again, Zinc HTTP framework comes 
+with useful classes to make this easy.
+
+84
+00:08:15,232 --> 00:08:20,232
+Then it answers a <i>Morph</i> object from the photo 
+to be displayed in the morphic window
+
+85
+00:08:25,271 --> 00:08:28,271
+Nice :)
+
+86
+00:08:28,371 --> 00:08:33,371
+But it would be better
+with scrollbars.
+
+87
+00:08:40,159 --> 00:08:44,159
+I change the scroller layout policy to a table layout
+
+88
+00:08:44,259 --> 00:08:48,259
+so its submorphs (here <i>content</i>) will be
+automatically placed horizontally.
+
+89
+00:08:55,626 --> 00:08:59,626
+I would like the size of the window
+to be 600px by 600px
+
+90
+00:09:03,683 --> 00:09:07,683
+Oups, syntax error ...
+
+91
+00:09:16,271 --> 00:09:20,271
+Finally I will add the title of each
+image below.
+
+92
+00:09:19,883 --> 00:09:23,883
+A way is to wrap each image and title in
+a column.
+
+93
+00:09:35,353 --> 00:09:39,353
+<i>PicasaPhoto>>title</i> does not exists yet.
+
+94
+00:09:39,453 --> 00:09:43,453
+See how Pharo proposes a default implementation.
 
