@@ -1,0 +1,761 @@
+1
+00:00:03,000 --> 00:00:05,180
+This video shows
+---
+Questo video mostra
+
+2
+00:00:05,280 --> 00:00:09,060
+how to get pictures from Picasa
+though its REST API and XML feed.
+---
+come ottenere foto da Picasa
+mediante il suo REST API e la sua struttura XML
+
+3
+00:00:09,140 --> 00:00:15,990
+Then how to build both a desktop application
+and a web page served by Pharo itself
+to display them.
+---
+Quindi come realizzare sia un'applicazione desktop
+che una pagina web gestita mediante Pharo
+
+4
+00:00:16,390 --> 00:00:19,390
+The main (World) menu is opened
+by clicking on the background.
+---
+Il menù principale (World) si apre
+cliccando sul background
+
+5
+00:00:20,000 --> 00:00:24,390
+For more readability
+I increase the font size
+---
+Per migliorare la leggibilità aumento la grandezza dei font
+
+6
+00:00:24,690 --> 00:00:28,490
+through the Settings Browser.
+---
+utilizzando il Setting Browser
+
+7
+00:00:32,480 --> 00:00:35,080
+Picasa provides a RESTful API
+through which we can search for photos
+---
+Picas fornisce un'API di tipo REST
+attraverso la quale si può accedere alle foto
+
+8
+00:00:35,180 --> 00:00:37,080
+and get the result as a XML document.
+---
+e trasformarle in documento XML
+
+9
+00:00:37,180 --> 00:00:40,680
+Just copy the provided URL
+and paste it into a Pharo workspace.
+---
+Basta copiare il riferimento URL
+e incollarlo nel workspace di Pharo
+
+10
+00:00:41,280 --> 00:00:43,670
+A workspace is used to dynamically evaluate some Smalltalk code.
+---
+Uno workspace è utilizzato per eseguire dinamicamente codice Smalltalk
+
+11
+00:00:43,770 --> 00:00:47,270
+Let's search for five photos of lighthouses.
+---
+Cerchiamo cinque foto di fari
+
+12
+00:00:50,550 --> 00:00:52,550
+ZnClient allows to build, execute and process HTTP requests
+---
+ZnClient ci permette di costruire, eseguire e processare richieste HTTP
+
+13
+00:00:52,860 --> 00:00:54,860
+The XML feed is successfully retrieved
+---
+L'accesso XML è realizzato correttamente
+
+14
+00:00:54,250 --> 00:00:56,750
+but it's not easy to examine it as a raw string.
+---
+ma non è facile esaminare il risultato come semplice stringa.
+
+15
+00:00:56,250 --> 00:00:58,750
+Pharo doesn't come with a XML parser,
+---
+Nella sua versione standard, Pharo non ha un parser XML
+
+16
+00:00:58,250 --> 00:01:01,810
+but we can install one easily thanks to the Configuration Browser.
+---
+ma può essere facilmente installato mediante il Configuration Browser
+
+17
+00:01:01,910 --> 00:01:03,910
+Configuration Browser allows to install Metacello configurations,
+Il Configuration Browser ci permette di installare configurazioni Metacello,
+
+18
+00:01:02,910 --> 00:01:04,910
+which describe groups of packages and their dependencies
+---
+che descrivono gruppi di packages e le loro dipendenze
+
+19
+00:01:03,910 --> 00:01:05,910
+for each version of Pharo.
+---
+per ogni versione di Pharo
+
+20
+00:01:06,650 --> 00:01:08,650
+Once done, the XMLDOMParser class is loaded into Pharo
+---
+Al termine dell'installazione, la classe XMLDOMParser è caricata in Pharo
+
+21
+00:01:08,750 --> 00:01:10,750
+and we can use it to parse the XML feed.
+---
+e la possiamo usare per fare il parsing del file XML
+
+22
+00:01:19,946 --> 00:01:21,946
+Pharo comes with awesome debugging tools.
+---
+Pharo contiene straordinari strumenti di debugging
+
+23
+00:01:22,046 --> 00:01:24,046
+Using the Explorer, we can browse the entire object graph
+---
+Utilizzando il tool Explorer, possiamo analizzare il grafo dell'intero oggetto
+
+24
+00:01:23,046 --> 00:01:26,883
+which makes it easy to inspect the hierarchy of XML nodes !
+---
+che rende semplice ispezionare la struttura gerarchica dei nodi XML !
+
+25
+00:01:26,883 --> 00:01:28,883
+Each photo is described in an <i>entry</i> tag
+---
+Ogni foto è descritta in un tag <i>entry</i>
+
+26
+00:01:28,983 --> 00:01:32,983
+wich itself contains a self-explaining <i>title</i> tag
+---
+che contiene un tag <i>title</i> autoesplicativo
+
+27
+00:01:33,083 --> 00:01:38,083
+and the URL in the <i>src</i> attribute of a <i>content</i> tag
+---
+e l'URL nell'attributo <i>src</i> in un tag <i>content</i>
+28
+00:01:39,941 --> 00:01:43,941
+From the inspector you can access the class of every object
+---
+Mediante l'inspector potete accedere alla classe di ogni oggetto
+
+29
+00:01:44,041 --> 00:01:46,041
+using the <i>Browse Class</i> menu entry.
+---
+utilizzando il tag <i>Browse Class</i> dell'elemento del menu
+
+30
+00:01:46,496 --> 00:01:49,496
+The default class browser is named <i>Nautilus</i>.
+---
+La classe del browser di default si chiama <i>Nautilus</i>
+
+31
+00:01:49,596 --> 00:01:53,496
+It offers a large range of tools to browse and modify classes.
+---
+che offre una vasta gamma di strumenti per accedere e modificare le classi.
+
+32
+00:01:55,596 --> 00:01:58,596
+We can dynamically evaluate some Smalltalk code
+---
+Possiamo dinamicamente valutare espressioni Smalltalk
+
+33
+00:01:58,696 --> 00:02:00,696
+in the context of the explorer.
+---
+all'interno dell'Explorer.
+
+34
+00:02:00,645 --> 00:02:02,645
+From the root node of the XML document
+---
+Attravesro il nodo origine del documento XML
+
+35
+00:02:02,745 --> 00:02:04,745
+we can retrieve all children nodes
+---
+possiamo accedere a tutti i nodi dipendenti
+
+36
+00:02:04,845 --> 00:02:06,845
+that are named <i>entry</i>.
+---
+che sono identificati come <i>entry</i>
+
+37
+00:02:23,893 --> 00:02:26,893
+<i><b>self</b></i> is bound to the object
+---
+i tags <i><b>self</b></i> sono associati a ciascun oggetto
+
+38
+00:02:26,993 --> 00:02:28,993
+that is selected in the explorer.
+---
+che è selezionato nell'Explorer
+
+39
+00:02:29,093 --> 00:02:33,093
+Here <b>self</b> is the objet that holds the <i>title</i> element.
+---
+Il tag <b>self</b> è l'oggetto che contiene l'elemento <i>title</i>.
+40
+00:02:36,552 --> 00:02:40,452
+Now it's the <i>entry</i> element.
+---
+Ora è l'elemento con tag <i>entry</i>
+
+41
+00:02:46,351 --> 00:02:50,251
+And now the root node of the XML document.
+---
+E adesso il nodo radice del documento XML
+
+42
+00:02:52,546 --> 00:02:56,546
+Here we get the content of all <i>title</i> tags in an array !
+---
+Qui otteniamo il contenuto di tutti gli elementi con tag <i>title</i> in un'array !
+
+43
+00:03:03,170 --> 00:03:07,070
+Let's something similar to get all the photos URLs.
+---
+Facciamo qualcosa di simile per accedere alle foto indirizzate dagli URL
+
+44
+00:03:26,480 --> 00:03:30,480
+I want to store title and URL for each photo in a PicasaPhoto object
+---
+Voglio memorizzare titolo e URL di ogni foto in una istanza di PicasaPhoto
+
+45
+00:03:30,580 --> 00:03:34,480
+using <i>title:</i> and <i>url:</i> messages.
+---
+utilizzando i messaggi <i>title:</i> and <i>url:</i>
+
+46
+00:03:45,580 --> 00:03:50,480
+PicasaPhoto doesn't exist yet.
+---
+La classe PicasaPhoto non esiste ancora
+
+47
+00:03:50,580 --> 00:03:55,480
+But remember Pharo is a live environment
+---
+Ma ricordate che Pharo è un ambiente dinamico
+
+48
+00:03:55,580 --> 00:03:59,480
+and can create it on the fly !
+---
+e potete creare la classe al volo !
+
+49
+00:04:04,503 --> 00:04:08,403
+<i>PicasaPhoto</i> will be stored in a new category named <i>Picasa</i>.
+---
+<i>PicasaPhoto</i> sarà memorizzato in una nuova categoria con l'identificativo <i>Picasa</i>.
+
+50
+00:04:08,503 --> 00:04:12,403
+Done ! But now Pharo opens a debugger 
+because <i>title:</i> method doesn't exist.
+---
+Fatto ! Ma ora Pharo apre un debugger
+perchè il metodo <i>title:</i> non esiste ancora
+
+51
+00:04:12,503 --> 00:04:16,403
+Again, Pharo can create it for us !
+---
+Anche questo può essere creato per noi da Pharo !
+
+52
+00:04:16,503 --> 00:04:20,403
+Methods are grouped into protocols 
+for easier method browsing
+---
+I metodi sono raggruppati in categorie (protocolli)
+per facilitarne la manipolazione
+
+53
+00:04:21,426 --> 00:04:25,426
+Your name will be used to track authors of changes 
+like in a version control system.
+---
+Il vostro nome verrà usato per lidentificazione dell'autore delle modifiche,
+come strumento di controllo di sistema
+
+54
+00:04:25,526 --> 00:04:29,526
+Implement the method directly in debugger 
+without stopping the evaluation !
+---
+Implementate il metodo direttamente nel debugger
+senza arrestare la valutazione !
+
+55
+00:04:29,626 --> 00:04:33,626
+Pharo also automatically detect missing variables 
+and add them when you choose to
+---
+Pharo identifica autometicamente variabili mancanti
+e le aggiunge sotto il vostro controllo
+
+56
+00:04:33,726 --> 00:04:37,726
+PicasaPhoto>>title: is here, 
+you can browse it !
+---
+PicasaPhoto>>title: è realizzato e
+lo potete controllare !
+
+57
+00:04:56,732 --> 00:05:00,732
+Done. We call that:
+<i><b>Debugger driven development</b></i>
+---
+Fatto. Lo chiamiamo
+<i><b>Debugger driven development</b></i>
+
+58
+00:05:00,832 --> 00:05:04,832
+Just inspect, manipulate objects and
+let Pharo help you going faster
+---
+Ispezionate, manipolate gli oggetti e
+lasciate che Pharo vi aiuti ad andare più veloci
+
+59
+00:05:06,209 --> 00:05:11,209
+Now let's move this code into
+a new <i>Picasa</i> class
+---
+Adesso, spsostiamo il codice 
+in una nuova classe <i>Picasa</i>
+
+60
+00:05:11,309 --> 00:05:16,309
+with a <b>class-side</b> method named
+<i>searchFor:</i>
+---
+mediante un metodo di classe <b>class-side</b>
+<i>searchFor:</i>
+
+61
+00:05:51,852 --> 00:05:55,852
+The <i><b>,</b></i> (comma) message is used to
+concatenate two collections
+---
+Utilizziamo il messaggio <i><b>,</b></i> (comma) per
+concatenare le due collezioni
+
+62
+00:05:55,509 --> 00:05:59,509
+and remember <i>String</i> objects are 
+
+collections of <i>Character</i> objects
+---
+e ricordate che gli oggetti <i>String</i> sono
+collezioni di oggetti <i>Character</i>
+
+63
+00:06:10,895 --> 00:06:14,895
+I would like to delegate the implementation 
+of <i>searchFor:</i> to instance side.
+---
+Preferisco delegare la realizzazione di 
+<i>searchFor:</i> alla parte istanza della classe
+
+64
+00:06:14,995 --> 00:06:18,995
+Pharo comes with powerful refactoring tools
+that help me do that
+---
+Pharo contiene un potente strumento di rifattorizzazione 
+che mi aiuta a fare ciò
+
+65
+00:06:37,766 --> 00:06:41,766
+<i>Format</i> menu entry is used to rearrange
+code automatically to follow the conventions
+---
+L'elemento del menu <i>Format</i> ci permette di
+ristrutturare automaticamente il codice in modo standard
+
+66
+00:06:45,144 --> 00:06:49,144
+Let's extract this code into a new method
+---
+Estraiamo questo codice in un nuovo metodo
+
+67
+00:06:49,244 --> 00:06:53,244
+using <i>Extract method</i> refactoring
+---
+utilizzando il comando <i>Extract method</i>
+
+68
+00:07:04,751 --> 00:07:08,751
+And inline the <i>content</i> variable in 
+order to remove it.
+---
+Aggiungiamo la variabile <i>content</i>
+per poterla eliminare
+
+69
+00:07:08,851 --> 00:07:10,851
+The Picasa basic search is working.
+---
+La base della ricerca di Picasa è ora funzionante
+
+70
+00:07:18,465 --> 00:07:21,465
+Now let's display the photos
+in a <i>Morphic</i> window.
+---
+Mostriamo ora le foto
+in una finestra <i>Morphic</i>
+
+71
+00:07:21,051 --> 00:07:24,051
+<i>Morphic</i> is the graphic system
+used in Pharo.
+---
+<i>Morphic</i> è l'ambiente grafico
+utilizzato da Phar
+
+72
+00:07:24,151 --> 00:07:27,151
+On top of <i>Morphic</i>, <i>UITheme</i> and 
+<i>Polymorph</i> builders allows to
+---
+Sopra <i>Morphic</i>, <i>UITheme</i> and
+<i>Polymorph</i> ci permettono di realizzare facilmente
+
+73
+00:07:27,251 --> 00:07:30,251
+easily build graphical applications.
+---
+applicazioni grafiche
+
+74
+00:07:30,351 --> 00:07:35,251
+<i>TEasilyThemed>>newRow:</i> and <i>newColumn:</i>
+arrange morphs horizontally and vertically.
+---
+I metodi <i>TEasilyThemed>>newRow:</i> e <i>newColumn:</i>
+organizzano le immagini orizzontalmente e verticalmente
+
+75
+00:08:00,123 --> 00:08:04,123
+<i>PicasaPhoto>>imageMorph</i> will have to 
+download the photo from Picasa.
+---
+<i>PicasaPhoto>>imageMorph</i> ci permette
+di scaricare le foto da Picasa
+
+76
+00:08:04,223 --> 00:08:09,223
+Again, Zinc HTTP framework comes 
+with useful classes to make this easy.
+---
+Gli strumenti del framework HTTP di Zinc 
+rendono semplice la realizzazione
+
+77
+00:08:15,232 --> 00:08:20,232
+Then it answers a <i>Morph</i> object from the photo 
+to be displayed in the morphic window
+---
+Quindi genera un oggetto <i>Morph</i> dalle foto
+da presentare in una finestra morphic
+
+78
+00:08:25,271 --> 00:08:28,271
+Nice :)
+---
+Non male, eh?
+
+79
+00:08:28,371 --> 00:08:33,371
+But it would be better
+with scrollbars.
+---
+Ma sarebbe meglio aggiungere
+le barre di scorrimento
+
+80
+00:08:40,159 --> 00:08:44,159
+I change the scroller layout policy to a table layout
+---
+Modifico la politica layout dello scroller a quella di un layout di tavola
+
+81
+00:08:44,259 --> 00:08:48,259
+so its submorphs (here <i>content</i>) will be
+automatically placed horizontally.
+---
+in questo modo le componenti submorph (here <i>content</i>)
+saranno automaticamente piazzate in orizzontale
+
+82
+00:08:55,626 --> 00:08:59,626
+I would like the size of the window
+to be 600px by 600px
+---
+Voglio che le dimensioni della finestra
+siano 600px per 600px
+
+83
+00:09:03,683 --> 00:09:07,683
+Oups, syntax error ...
+---
+Oops, errore di sintassi...
+
+84
+00:09:16,271 --> 00:09:20,271
+Finally I will add the title of each
+image below.
+---
+Ed in fine, aggiungo il titolo sotto
+ogni immagine
+
+85
+00:09:19,883 --> 00:09:23,883
+A way is to wrap each image and title in
+a column.
+---
+Un modo è quello di portare ogni immagine e titolo
+in una colonna
+
+86
+00:09:35,353 --> 00:09:39,353
+<i>PicasaPhoto>>title</i> does not exists yet.
+---
+<i>PicasaPhoto>>title</i> non esiste ancora.
+
+87
+00:09:39,453 --> 00:09:43,453
+See how Pharo proposes a default implementation.
+---
+Verificate come Pharo propone una implementazione di default
+
+88
+00:09:47,322 --> 00:09:50,322
+Done.
+---
+Fatto
+
+89
+00:09:52,599 --> 00:09:56,599
+The last part of this tutorial
+shows how to create and serve a webpage
+---
+L'ultima parte di questo tutorial
+mostra come creare e servire una pagina web
+
+90
+00:09:56,699 --> 00:10:00,699
+that will display the result of
+a Picasa search
+---
+che mostri il risultato di
+una ricerca Picasa
+
+91
+00:10:00,799 --> 00:10:04,799
+using Zinc HTTP components.
+---
+utilizzando componenti di Zinc HTTP
+
+92
+00:10:15,874 --> 00:10:19,874
+We can create a web application
+---
+Possiamo creare un'applicazione web
+
+93
+00:10:19,974 --> 00:10:24,974
+by implementing the <i>value: </i>method
+in a class
+---
+creando il metodo <i>value: </i> 
+in una classe
+
+94
+00:10:50,904 --> 00:10:54,904
+and map a subpath to an instance 
+of this class
+---
+e mappare un cammino a una istanza 
+di questa classe
+
+95
+00:10:55,004 --> 00:10:59,004
+using <i>ZnDefaultServerDelegate>>map:to:</i>
+---
+utilizzando <i>ZnDefaultServerDelegate>>map:to:</i>
+
+96
+00:11:19,366 --> 00:11:23,366
+The <i>aRequest</i> argument is 
+a <i>ZnRequest</i> object
+---
+L'argomento <i>aRequest</i>
+è un oggetto della classe <i>ZnRequest</i>
+
+97
+00:11:23,404 --> 00:11:27,404
+and <i>uri</i> message answers a <i>ZnUrl</i> object
+---
+e il messaggio <i>uri</i> risponde un oggetto <i>ZnUrl</i>
+
+98
+00:11:27,404 --> 00:11:31,404
+from which we can parse the query string.
+---
+dal quale possiamo scandire la stringa di richiesta
+
+99
+00:11:31,504 --> 00:11:35,504
+I retrieve the <i>s</i> parameter of an url like
+http://localhost:8080/picasa?s=lighthouse
+---
+Accedo al parametro <i>s</i> di un url del tipo
+http://localhost:8080/picasa?s=lighthouse
+
+100
+00:11:51,711 --> 00:11:55,711
+Now let's build a method that will
+compose the HTML response
+---
+Adesso costruiamo un metodo che 
+componga la risposta HTML
+
+101
+00:11:55,811 --> 00:11:59,811
+in the <i>Debugger driven development </i>way.
+---
+con l'approccio <i>Debugger driven development </i>.
+
+102
+00:12:01,925 --> 00:12:05,925
+By default <i>ZnServer</i> deactivates the debugger
+for production use.
+---
+Per default <i>ZnServer</i> disattiva il debugger
+per utilizzo in produzione
+
+103
+00:12:06,025 --> 00:12:10,025
+We can activate it through the <i>debugMode:</i> message.
+---
+Possiamo attivarlo mediante il messaggio <i>debugMode:</i>
+
+104
+00:12:10,125 --> 00:12:14,125
+Then we can start implementing missing methods
+the same way we've done before !
+---
+Possiamo cominciare a realzzare i metodi mancanti
+nel modo che abbiamo utilizzato precedentemente
+
+105
+00:12:38,831 --> 00:12:42,831
+<i>String>>streamContents:</i> is use to build
+a string through a <i>TextStream</i> object
+---
+utilizziamo <i>String>>streamContents:</i> per
+costruire una stringa mediante un oggetto <i>TextStream</i>
+
+106
+00:12:43,325 --> 00:12:48,325
+that will offer better performances than 
+concatenating several strings into one.
+---
+che permette di concatenare diverse
+stringhe in una sola
+
+107
+00:12:55,288 --> 00:13:00,288
+Each photo and title will be displayed
+through <ul> and <li> html tags.
+---
+Ogni foto e titolo sarà presentata 
+mediante i tags <ul> and <li>
+
+108
+00:13:48,368 --> 00:13:52,368
+Note the web browser is still waiting for
+the response
+---
+Osservate che il web browser sta ancora
+attendendo la risposta
+
+109
+00:13:52,468 --> 00:13:56,468
+while implementing the method in the
+debugger
+---
+mentre stiamo realizzando il metodo nel
+debugger
+
+110
+00:13:56,568 --> 00:14:00,568
+so no need to refresh the page after clicking
+on <i>Proceed</i> !
+---
+perciò non serve fare un refresh della pagina
+dopo avre cliccato <i>Proceed</i> !
+
+111
+00:14:09,779 --> 00:14:14,779
+Enjoy <b>Pharo</b> !
+---
+Divertitevi con <b>Pharo</b> !
