@@ -9,7 +9,7 @@ mediante il suo REST API e la sua struttura XML
 
 3
 00:00:09,140 --> 00:00:15,990
-Quindi come realizzare sia un'applicazione desktop
+Succesivamente, come realizzare sia un'applicazione desktop
 che una pagina web gestita mediante Pharo
 
 4
@@ -113,7 +113,7 @@ e l'URL nell'attributo <i>src</i> in un tag <i>content</i>
 
 28
 00:01:39,941 --> 00:01:43,941
-Mediante l'inspector potete accedere alla classe di ogni oggetto
+Mediante l'Inspector potete accedere alla classe di ogni oggetto
 
 29
 00:01:44,041 --> 00:01:46,041
@@ -181,7 +181,7 @@ Voglio memorizzare titolo e URL di ogni foto in una istanza di PicasaPhoto
 
 45
 00:03:30,580 --> 00:03:34,480
-utilizzando i messaggi <i>title:</i> and <i>url:</i>
+utilizzando i messaggi <i>title:</i> e <i>url:</i>
 
 46
 00:03:45,580 --> 00:03:50,480
@@ -215,7 +215,7 @@ per facilitarne la manipolazione
 
 53
 00:04:21,426 --> 00:04:25,426
-Il vostro nome verrà usato per lidentificazione dell'autore delle modifiche,
+Il vostro nome verrà usato per l'identificazione dell'autore delle modifiche,
 come strumento di controllo di sistema
 
 54
@@ -225,7 +225,7 @@ senza arrestare la valutazione !
 
 55
 00:04:29,626 --> 00:04:33,626
-Pharo identifica autometicamente variabili mancanti
+Pharo identifica automaticamente variabili mancanti
 e le aggiunge sotto il vostro controllo
 
 56
@@ -245,7 +245,7 @@ lasciate che Pharo vi aiuti ad andare più veloci
 
 59
 00:05:06,209 --> 00:05:11,209
-Adesso, spsostiamo il codice 
+Adesso, spostiamo il codice 
 in una nuova classe <i>Picasa</i>
 
 60
@@ -255,7 +255,7 @@ mediante un metodo di classe <b>class-side</b>
 
 61
 00:05:51,852 --> 00:05:55,852
-Utilizziamo il messaggio <i><b>,</b></i> (comma) per
+Utilizziamo il messaggio <i><b>,</b></i> (virgola) per
 concatenare le due collezioni
 
 62
@@ -265,13 +265,13 @@ collezioni di oggetti <i>Character</i>
 
 63
 00:06:10,895 --> 00:06:14,895
-Preferisco delegare la realizzazione di 
+Preferisco attribuire la realizzazione di 
 <i>searchFor:</i> alla parte istanza della classe
 
 64
 00:06:14,995 --> 00:06:18,995
 Pharo contiene un potente strumento di rifattorizzazione 
-che mi aiuta a fare ciò
+che mi aiuta a farlo
 
 65
 00:06:37,766 --> 00:06:41,766
@@ -303,11 +303,11 @@ in una finestra <i>Morphic</i>
 71
 00:07:21,051 --> 00:07:24,051
 <i>Morphic</i> è l'ambiente grafico
-utilizzato da Phar
+utilizzato da Pharo
 
 72
 00:07:24,151 --> 00:07:27,151
-Sopra <i>Morphic</i>, <i>UITheme</i> and
+Mediante <i>Morphic</i>, gli strumenti <i>UITheme</i> and
 <i>Polymorph</i> ci permettono di realizzare facilmente
 
 73
@@ -326,13 +326,13 @@ di scaricare le foto da Picasa
 
 76
 00:08:04,223 --> 00:08:09,223
-Gli strumenti del framework HTTP di Zinc 
-rendono semplice la realizzazione
+Ancora una volta, gli strumenti del framework HTTP di Zinc 
+rendono semplice la realizzazione mediante appositi comandi
 
 77
 00:08:15,232 --> 00:08:20,232
-Quindi genera un oggetto <i>Morph</i> dalle foto
-da presentare in una finestra morphic
+Che sono in grado di generare un oggetto <i>Morph</i> dalle foto,
+che possiamo presentare in una finestra morphic
 
 78
 00:08:25,271 --> 00:08:28,271
@@ -345,11 +345,11 @@ le barre di scorrimento
 
 80
 00:08:40,159 --> 00:08:44,159
-Modifico la politica layout dello scroller a quella di un layout di tavola
+Trasformo la presentazione "layout" dello scroller in una presentazione "tavola"
 
 81
 00:08:44,259 --> 00:08:48,259
-in questo modo le componenti submorph (here <i>content</i>)
+in questo modo le componenti submorph (<i>content</i>)
 saranno automaticamente piazzate in orizzontale
 
 82
@@ -368,7 +368,7 @@ ogni immagine
 
 85
 00:09:19,883 --> 00:09:23,883
-Un modo è quello di portare ogni immagine e titolo
+Un possibile modo per fare ciò è quello di portare ogni immagine e titolo
 in una colonna
 
 86
@@ -377,7 +377,7 @@ in una colonna
 
 87
 00:09:39,453 --> 00:09:43,453
-Verificate come Pharo propone una implementazione di default
+Osservate come Pharo propone una implementazione di default
 
 88
 00:09:47,322 --> 00:09:50,322
@@ -408,7 +408,7 @@ in una classe
 
 94
 00:10:50,904 --> 00:10:54,904
-e mappare un cammino a una istanza 
+e realizzare un cammino a una istanza 
 di questa classe
 
 95
@@ -454,7 +454,7 @@ Possiamo attivarlo mediante il messaggio <i>debugMode:</i>
 104
 00:12:10,125 --> 00:12:14,125
 Possiamo cominciare a realzzare i metodi mancanti
-nel modo che abbiamo utilizzato precedentemente
+nel modo che abbiamo visto precedentemente
 
 105
 00:12:38,831 --> 00:12:42,831
@@ -469,7 +469,7 @@ stringhe in una sola
 107
 00:12:55,288 --> 00:13:00,288
 Ogni foto e titolo sarà presentata 
-mediante i tags <ul> and <li>
+mediante i tags <ul> e <li>
 
 108
 00:13:48,368 --> 00:13:52,368
